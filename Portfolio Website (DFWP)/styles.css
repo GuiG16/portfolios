@@ -1,3 +1,97 @@
+/**********************************
+* This is the global CSS stylesheet
+**********************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 h1, h2 {
     text-align: center;
+}
+
+/*********************************
+* 1. Nav Bar Section
+*********************************/
+/* Basic page */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #2c3e50;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-height: 100vh;
+  color: #ecf0f1;
+}
+
+h1 {
+  margin: 40px 0;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Nav */
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: #34495e;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Links */
+nav a {
+  flex: 1 1 auto;
+  padding: 15px 20px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  z-index: 2; /* above the .animation */
+  text-align: center;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #ffffff;
+}
+
+/* Decorative sliding bar */
+nav .animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #e67e22;
+  border-radius: 8px;
+  transition: left 0.35s ease, width 0.35s ease;
+  z-index: 1;
+  width: 0;
+  pointer-events: none; /* IMPORTANT so it doesn't block link hover/clicks */
+}
+
+/* Active link style (optional: change text color for active) */
+nav a.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Page footer text */
+p {
+  font-size: 16px;
+  margin: 40px 0;
+}
+
+/* Small screens: reduce padding */
+@media (max-width: 480px) {
+  nav a {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
 }
