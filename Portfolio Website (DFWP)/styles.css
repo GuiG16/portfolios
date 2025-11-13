@@ -8,10 +8,7 @@ h1, h2 {
     text-align: center;
 }
 
-/*********************************
-* 1. Nav Bar Section
-*********************************/
-/* Basic page */
+/* Page CSS */
 body {
   font-family: "Poppins", sans-serif;
   background: #2c3e50;
@@ -27,6 +24,9 @@ h1 {
   text-shadow: 2px 2px 4px #000;
 }
 
+/*********************************
+* 1. Nav Bar Section
+*********************************/
 /* Nav */
 nav {
   position: relative;
@@ -45,7 +45,7 @@ nav {
 nav a {
   flex: 1 1 auto;
   padding: 15px 20px;
-  color: white;
+  color: #e67e22;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 15px;
@@ -62,25 +62,34 @@ nav a:focus {
   color: #ffffff;
 }
 
+/* Active link style (optional: change text color for active) */
+nav a.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+nav a:nth-child(1):hover ~ .animation { left: 0; width: 25%; }
+nav a:nth-child(2):hover ~ .animation { left: 25%; width: 25%; }
+nav a:nth-child(3):hover ~ .animation { left: 50%; width: 25%; }
+nav a:nth-child(4):hover ~ .animation { left: 75%; width: 25%; }
+
 /* Decorative sliding bar */
 nav .animation {
   position: absolute;
   top: 0;
-  left: 0;
   height: 100%;
   background-color: #e67e22;
   border-radius: 8px;
   transition: left 0.35s ease, width 0.35s ease;
   z-index: 1;
-  width: 0;
-  pointer-events: none; /* IMPORTANT so it doesn't block link hover/clicks */
 }
 
-/* Active link style (optional: change text color for active) */
-nav a.active {
-  color: #fff;
-  font-weight: 600;
-}
+/* One of these should match the 'active' link */
+nav .animation.start-home  { left: 0; width: 25%; }
+nav .animation.start-work  { left: 25%; width: 25%; }
+nav .animation.start-me    { left: 50%; width: 25%; }
+nav .animation.start-contact { left: 75%; width: 25%; }
+
 
 /* Page footer text */
 p {
