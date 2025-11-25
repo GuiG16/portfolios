@@ -142,13 +142,25 @@ img {
   font-size: 1rem;
   color: #ffffff;
   cursor: pointer;
+
+  display: inline-block;
+  min-width: 220px;
+  text-align: center;
 }
 
-.expand-button .chevron {
+.expand-button .fa-chevron-up {
   display: inline-block;
   transition: transform .3s ease;
 }
 
-.expand-button[aria-expanded='true'] .chevron {
+.expand-button[aria-expanded='true'] .fa-chevron-up {
   transform: rotate(180deg);
+}
+
+.card {
+  margin: 25px auto;
+  width: 100%;
+  border-color: #19232e;
+  background-color: #34495e;
+  box-shadow: 2px 2px 5px #19232e;
 }
