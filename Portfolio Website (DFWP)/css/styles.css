@@ -4,7 +4,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* Page CSS */
+/*********************************
+* 1. General CSS
+*********************************/
 body {
   font-family: "Poppins", sans-serif;
   background: #2c3e50;
@@ -22,23 +24,16 @@ h1 {
 }
 
 hr {
-  margin-top: 5%;
-  margin-bottom: 3%;
-  width: 90%;
-  height: 5%;
-  border-color: #e67e22;
-  border-radius: 50%;
-}
-
-#main-button button {
-  --bs-btn-padding-y: .25rem;
-  --bs-btn-padding-x: .5rem; 
-  --bs-btn-font-size: .75rem; 
-  --bs-btn-color: #e67e22;
+  margin: 4% 10% 3%;
+  width: 80%;
+  height: 8px;
+  border: none;
+  background-color:#e67e22;
+  border-radius: 999px;
 }
 
 /*********************************
-* 1. Nav Bar Section
+* 2. Nav Bar Section
 *********************************/
 /* Nav */
 #main-nav {
@@ -50,6 +45,7 @@ hr {
   width: 90%;
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 20px;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -75,7 +71,7 @@ hr {
   color: #ffffff;
 }
 
-/* Active link style (optional: change text color for active) */
+/* Active link style */
 #main-nav a.active {
   color: #ffffff;
   font-weight: 600;
@@ -86,7 +82,7 @@ hr {
 #main-nav a:nth-child(3):hover ~ .animation { left: 50%; width: 25%; }
 #main-nav a:nth-child(4):hover ~ .animation { left: 75%; width: 25%; }
 
-/* Decorative sliding bar */
+/* Sliding orange rectangle */
 #main-nav .animation {
   position: absolute;
   top: 0;
@@ -97,7 +93,7 @@ hr {
   z-index: 1;
 }
 
-/* One of these should match the 'active' link */
+/* Changes the active link to match */
 #main-nav .animation.start-home  { left: 0; width: 25%; }
 #main-nav .animation.start-work  { left: 25%; width: 25%; }
 #main-nav .animation.start-me    { left: 50%; width: 25%; }
@@ -110,7 +106,7 @@ p {
   margin: 40px 0;
 }
 
-/* Small screens: reduce padding */
+/* Reduces padding on smaller screens */
 @media (max-width: 480px) {
   #main-nav a {
     padding: 12px 10px;
@@ -119,7 +115,7 @@ p {
 }
 
 /*********************************
-* 1. Hero Section
+* 3. Hero Section (landing page)
 *********************************/
 /*Hero Section Headings*/
 .lp-heading {
@@ -132,4 +128,27 @@ img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+
+/*********************************
+* 4. Expandable Button (me page)
+*********************************/
+/*Style for button itself*/
+.expand-button {
+  background-color: #e67e22;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.expand-button .chevron {
+  display: inline-block;
+  transition: transform .3s ease;
+}
+
+.expand-button[aria-expanded='true'] .chevron {
+  transform: rotate(180deg);
 }
