@@ -2,9 +2,10 @@
 * Nav Bar JS
 ***********/
 
-const nav = document.querySelector("nav");
-const animation = document.querySelector(".animation");
-const links = document.querySelectorAll("nav a");
+const nav = document.getElementById("myTopNav");
+
+const animation = nav.querySelector(".animation");
+const links = nav.querySelectorAll("a.nav-link");
 
 links.forEach(link => {
   link.addEventListener("mouseenter", e => {
@@ -15,15 +16,11 @@ links.forEach(link => {
   });
 });
 
+
 nav.addEventListener("mouseleave", () => {
   animation.style.width = 0;
 });
 
 function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+  nav.classList.toggle("responsive");
 }

@@ -43,8 +43,8 @@ hr {
 /*********************************
 * 2. Nav Bar Section
 *********************************/
-/* Nav */
-#main-nav {
+/* NAV CONTAINER */
+#myTopNav {
   position: sticky;
   top: 0;
   display: flex;
@@ -53,47 +53,42 @@ hr {
   border-radius: 8pt;
   width: 90%;
   max-width: 800pt;
-  margin: 0 auto;
-  margin-top: 20pt;
+  margin: 20pt auto 0;
   overflow: hidden;
   box-sizing: border-box;
   box-shadow: 1pt 1pt 3pt #19232e;
 }
 
-/* Links */
-#main-nav a {
-  flex: 1 1 auto;
+/* ALL LINKS (desktop default) */
+#myTopNav a {
+  flex: 1 1 0;
   padding: 15pt 20pt;
   color: #e67e22;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 15pt;
   position: relative;
-  z-index: 2; /* above the .animation */
+  z-index: 2;
   text-align: center;
   transition: color 0.2s ease;
   white-space: nowrap;
   cursor: pointer;
 }
 
-#main-nav a:hover,
-#main-nav a:focus {
+/* hover states */
+#myTopNav a:hover,
+#myTopNav a:focus {
   color: #ffffff;
 }
 
-/* Active link style */
-#main-nav a.active {
+/* active link */
+#myTopNav a.active {
   color: #ffffff;
   font-weight: 600;
 }
 
-#main-nav a:nth-child(1):hover ~ .animation { left: 0; width: 25%; }
-#main-nav a:nth-child(2):hover ~ .animation { left: 25%; width: 25%; }
-#main-nav a:nth-child(3):hover ~ .animation { left: 50%; width: 25%; }
-#main-nav a:nth-child(4):hover ~ .animation { left: 75%; width: 25%; }
-
-/* Sliding orange rectangle */
-#main-nav .animation {
+/* SLIDING ANIMATION */
+#myTopNav .animation {
   position: absolute;
   top: 0;
   height: 100%;
@@ -103,51 +98,69 @@ hr {
   z-index: 1;
 }
 
-/* Changes the active link to match */
-#main-nav .animation.start-home  { left: 0; width: 25%; }
-#main-nav .animation.start-work  { left: 25%; width: 25%; }
-#main-nav .animation.start-me    { left: 50%; width: 25%; }
-#main-nav .animation.start-contact { left: 75%; width: 25%; }
+#myTopNav .animation.start-home    { left: 0;   width: 25%; }
+#myTopNav .animation.start-work    { left: 25%; width: 25%; }
+#myTopNav .animation.start-me      { left: 50%; width: 25%; }
+#myTopNav .animation.start-contact { left: 75%; width: 25%; }
 
-
-/* Page footer text */
-p {
-  margin: auto;
-  font-size: 16pt;
-  margin: 40pt 0;
-}
-
-#main-nav .icon {
+/* HAMBURGER — ALWAYS override flex */
+#myTopNav a.icon {
   display: none;
+  flex: 0 0 auto;   /* ← CRITICAL FIX */
 }
 
-/*Displays links horizontally using Javascript*/
+/*********************************
+* MOBILE
+*********************************/
 @media screen and (max-width: 600px) {
-#main-nav.responsive {
-  position: relative;
-}
 
-#main-nav.responsive a.icon {  
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+   #myTopNav {
+    padding: 4pt 12pt;
+    align-items: center;     /* vertically center icon */
+    min-height: unset;
+  }
 
-#main-nav.responsive a {
-  float: none;
-  display: block;
-  text-align: left;
-}
-}
+  /* hide nav links */
+  #myTopNav a.nav-link {
+    display: none;
+  }
 
-/* dding reduced on smaller displays */
-@media (max-width: 480pt) {
-  #main-nav a:not(:first-child) {display: none;}
-  #main-nav a.icon {
-    float: left;
+  /* show hamburger */
+  #myTopNav a.icon {
     display: block;
+    margin-left: auto;
+    padding: 12pt;
+  }
+
+  /* hamburger icon colour */
+  #myTopNav a.icon i {
+    color: #e67e22;
+    font-size: 20px;
+  }
+
+  /* remove animation bar */
+  #myTopNav .animation {
+    display: none;
+  }
+
+  /* collapse empty pill */
+  #myTopNav {
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  /* expanded state */
+  #myTopNav.responsive {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #myTopNav.responsive a.nav-link {
+    display: block;
+    text-align: center;
   }
 }
+
 
 /*********************************
 * 3. Hero Section (landing page)

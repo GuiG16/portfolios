@@ -12,28 +12,31 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <link rel='stylesheet' href='css/styles.css' />
-    <script src='js/nav-bar.js'></script>
+    <script src="https://kit.fontawesome.com/7d50843986.js" crossorigin="anonymous"></script>
 
     <title>G's Portfolio</title>
 </head>
 
 <body>
     <section>
-        <nav id="main-nav" id="myTopNav">
+        <nav id="myTopNav">
             <a href="landing-page.html" class="nav-link active">Home</a>
             <a href="my-work.html" class="nav-link">My Work</a>
             <a href="me.html" class="nav-link">Me</a>
             <a href="contact.html" class="nav-link">Contact</a>
+
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+
             <div class="animation start-home"></div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>
-            <i class="fa fa-bars"></i>
         </nav>
     </section>
 
     <h1 class="lp-heading">Salut!</h1>
     <img class="herosection-image" src="images/GuiG Logo (portfolio).png" alt="Avatar">
     <h2 class="lp-heading-2">I'm Guillaume!</h2>
-    <p class="home-intro">I'm a 20 year old BSc (Hons) Digital Media student, designer, and passionate volunteer.</p>
+    <p class="home-intro">I'm a 20 year old BSc Digital Media student, designer, and passionate volunteer.</p>
     <p class="home-intro">I enjoy gaming with my friends, mastering GeoGuessr, and learning new things!</p>
 
     <hr>
@@ -83,6 +86,8 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
     </div>
+
+<script src='js/nav-bar.js'></script>
 
 </body>
 
