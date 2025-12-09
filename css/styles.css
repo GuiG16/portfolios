@@ -331,8 +331,15 @@ hr {
 }
 
 .me-images {
-  display: flex;
-  height: 400pt;
+  margin-top: 20pt;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.me-image {
+  position: relative;
+  margin: auto;
+  height: 600pt;
   border-radius: 40pt;
 }
 
@@ -344,6 +351,8 @@ hr {
   border: none;
   border-radius: 10pt;
 }
+
+
 
 @media screen and (max-width: 600px) {
   .me-images {
@@ -362,6 +371,18 @@ hr {
   border-radius: 8pt;
 }
 
+.index-btn {
+  margin-top: 20pt;
+  margin-bottom: 50pt;
+  padding: 20pt;
+  padding-left: 30pt;
+  padding-right: 30pt;
+  color:#ecf0f1;
+  background-color: #e67e22;
+  border: none;
+  border-radius: 10pt;
+}
+
 /*********************************
 * 8. Three Compositions Page
 *********************************/
@@ -371,4 +392,22 @@ hr {
   height: 250pt;
   width: 250pt;
   border-radius: 20pt;
+}
+
+/*********************************
+* 5. Contact Me Page
+*********************************/
+.fa-github {
+  text-decoration: none;
+  color: #ecf0f1;
+}
+
+.fa-square-linkedin {
+  text-decoration: none;
+  color:#0072b1;
+}
+
+.fa-instagram {
+  text-decoration: none;
+  color:#e67e22;
 }
